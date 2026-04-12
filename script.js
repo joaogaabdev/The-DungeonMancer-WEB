@@ -38,7 +38,85 @@ function initRunes() {
   }
 }
 
-/* ── CHARACTER TABS ─────────────────────── */
+/* ── IMAGE CARDS — Flip & Lightbox ─────── */
+const LIGHTBOX_DATA = [
+  { src: '1776014212206_image.png',  caption: 'The DungeonMancer — Tela de Título'         },
+  { src: '1776014219927_image.png',  caption: 'Defesas & Acampamentos'                     },
+  { src: '1776014224168_image.png',  caption: 'Os Funcionários — Sua Equipe Multifatorial'  },
+  { src: '1776014228006_image.png',  caption: 'Os Fornecedores — Sua Principal Fonte de Renda' },
+];
+
+let lightboxIndex = 0;
+
+function initImageCards() {
+  const cards    = document.querySelectorAll('.img-card');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lightboxImg');
+  const lbCap    = document.getElementById('lightboxCaption');
+  const lbClose  = document.getElementById('lightboxClose');
+  const lbBack   = document.getElementById('lightboxBackdrop');
+  const lbPrev   = document.getElementById('lightboxPrev');
+  const lbNext   = document.getElementById('lightboxNext');
+
+  if (!lightbox) return;
+
+  /* ─ flip on click ─ */
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // If click lands on the back face, open lightbox instead of un-flipping
+      if (card.classList.contains('is-flipped')) {
+        openLightbox(parseInt(card.dataset.index, 10));
+        return;
+      }
+      // First click → flip to show info
+      card.classList.add('is-flipped');
+    });
+  });
+
+  /* Keyboard: Escape un-flips all cards or closes lightbox */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (lightbox.classList.contains('is-open')) {
+        closeLightbox();
+      } else {
+        document.querySelectorAll('.img-card.is-flipped').forEach(c => c.classList.remove('is-flipped'));
+      }
+    }
+    if (lightbox.classList.contains('is-open')) {
+      if (e.key === 'ArrowLeft')  navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+    }
+  });
+
+  /* ─ lightbox controls ─ */
+  lbClose.addEventListener('click', closeLightbox);
+  lbBack.addEventListener('click', closeLightbox);
+  lbPrev.addEventListener('click', () => navigateLightbox(-1));
+  lbNext.addEventListener('click', () => navigateLightbox(1));
+
+  function openLightbox(index) {
+    lightboxIndex = ((index % LIGHTBOX_DATA.length) + LIGHTBOX_DATA.length) % LIGHTBOX_DATA.length;
+    const data = LIGHTBOX_DATA[lightboxIndex];
+    lbImg.src = data.src;
+    lbImg.alt = data.caption;
+    lbCap.textContent = data.caption;
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function navigateLightbox(dir) {
+    openLightbox(lightboxIndex + dir);
+  }
+}
+
+
 function switchTab(tabId) {
   document.querySelectorAll('.chars-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.chars-panel').forEach(p => p.classList.remove('active'));
@@ -93,6 +171,7 @@ function initParallax() {
 document.addEventListener('DOMContentLoaded', () => {
   initParticles();
   initRunes();
+  initImageCards();
   initTabs();
   initScrollReveal();
   initSmoothAnchors();

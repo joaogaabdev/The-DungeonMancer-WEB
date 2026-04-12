@@ -168,33 +168,135 @@
   </section>
 
   <!-- ══════════════════════════════════════
-       GALLERY
+       GALLERY — Interactive Image Cards
        ══════════════════════════════════════ -->
   <section id="gallery">
     <p class="section-label">Visuais</p>
     <h2 class="section-title">Sua Masmorra, Seu Caos</h2>
     <p class="section-subtitle">Arte pixel 2D com câmera top-down — cada pixel, uma dívida de aventureiro.</p>
 
-    <div class="gallery-grid reveal">
-      <div class="gallery-item">
-        <img src="1775976262432_image.png" alt="Os Funcionários" loading="lazy" width="800" height="500" onerror="this.closest('.gallery-item').style.display='none'">
-        <div class="gallery-overlay">
-          <span class="gallery-label">Os Funcionários — Sua Equipe Multifatorial</span>
+    <div class="img-cards-grid reveal">
+
+      <!-- Card 1: Logo / Title screen -->
+      <div class="img-card" data-index="0">
+        <div class="img-card__inner">
+          <div class="img-card__face img-card__front">
+            <img src="./images/TheDungeonMancer.png" alt="The DungeonMancer" loading="lazy" width="800" height="500">
+            <div class="img-card__badge">🏰 Título</div>
+            <div class="img-card__hint">Clique para ver detalhes</div>
+          </div>
+          <div class="img-card__face img-card__back">
+            <div class="img-card__back-content">
+              <span class="img-card__back-icon">🏰</span>
+              <h3 class="img-card__back-title">The DungeonMancer</h3>
+              <p class="img-card__back-desc">
+                Bem-vindo ao empreendimento mais arriscado das Terras de Ouro. 
+                Você não é o herói — você é o anfitrião. E o anfitrião tem grimório pirata.
+              </p>
+              <div class="img-card__tags">
+                <span class="img-tag">Roguelike</span>
+                <span class="img-tag">Dungeon Defense</span>
+                <span class="img-tag">Auto Battler</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="gallery-item">
-        <img src="1775976268962_image.png" alt="Os Fornecedores" loading="lazy" width="800" height="500" onerror="this.closest('.gallery-item').style.display='none'">
-        <div class="gallery-overlay">
-          <span class="gallery-label">Os Fornecedores — Sua Principal Fonte de Renda</span>
+
+      <!-- Card 2: Defesas e Acampamentos -->
+      <div class="img-card" data-index="1">
+        <div class="img-card__inner">
+          <div class="img-card__face img-card__front">
+            <img src="./images/Camping.png" alt="Defesas e Acampamentos" loading="lazy" width="800" height="500">
+            <div class="img-card__badge">🕸️ Defesas</div>
+            <div class="img-card__hint">Clique para ver detalhes</div>
+          </div>
+          <div class="img-card__face img-card__back">
+            <div class="img-card__back-content">
+              <span class="img-card__back-icon">🕸️</span>
+              <h3 class="img-card__back-title">Defesas &amp; Acampamentos</h3>
+              <p class="img-card__back-desc">
+                Teia de Aranha lentifica invasores, Espinhos causam dano contínuo 
+                e o Mímico devora quem tentar abrir o "baú". Infraestrutura de baixo custo, alto retorno.
+              </p>
+              <div class="img-card__tags">
+                <span class="img-tag">Teia de Aranha</span>
+                <span class="img-tag">Espinhos</span>
+                <span class="img-tag">Mímico</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="gallery-item">
-        <img src="1775976257228_image.png" alt="Defesas e Acampamentos" loading="lazy" width="800" height="500" onerror="this.closest('.gallery-item').style.display='none'">
-        <div class="gallery-overlay">
-          <span class="gallery-label">Defesas & Acampamentos — Infraestrutura de Baixo Custo</span>
+
+      <!-- Card 3: Os Funcionários -->
+      <div class="img-card" data-index="2">
+        <div class="img-card__inner">
+          <div class="img-card__face img-card__front">
+            <img src="./images/Employees.png" alt="Os Funcionários" loading="lazy" width="800" height="500">
+            <div class="img-card__badge">💀 Funcionários</div>
+            <div class="img-card__hint">Clique para ver detalhes</div>
+          </div>
+          <div class="img-card__face img-card__back">
+            <div class="img-card__back-content">
+              <span class="img-card__back-icon">💀</span>
+              <h3 class="img-card__back-title">Os Funcionários</h3>
+              <p class="img-card__back-desc">
+                Sua equipe multifatorial: do Esqueleto estagiário ao Minotauro gerente de andar. 
+                Cada um com atributos, sinergias e — surpreendentemente — folha de pagamento em Almas.
+              </p>
+              <div class="img-card__tags">
+                <span class="img-tag">Esqueleto</span>
+                <span class="img-tag">Gnoll</span>
+                <span class="img-tag">Xamã</span>
+                <span class="img-tag">Minotauro</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Card 4: Os Fornecedores -->
+      <div class="img-card" data-index="3">
+        <div class="img-card__inner">
+          <div class="img-card__face img-card__front">
+            <img src="./images/Supplyers.png" alt="Os Fornecedores" loading="lazy" width="800" height="500">
+            <div class="img-card__badge">⚔️ Fornecedores</div>
+            <div class="img-card__hint">Clique para ver detalhes</div>
+          </div>
+          <div class="img-card__face img-card__back">
+            <div class="img-card__back-content">
+              <span class="img-card__back-icon">⚔️</span>
+              <h3 class="img-card__back-title">Os Fornecedores</h3>
+              <p class="img-card__back-desc">
+                Heróis, padres, ladinos e até galinhas. Eles entram pela porta da masmorra 
+                e saem como estatísticas de receita. O Paladino-fiscal é o cliente mais valioso — e o mais irritante.
+              </p>
+              <div class="img-card__tags">
+                <span class="img-tag">Cavaleiro</span>
+                <span class="img-tag">Arqueiro</span>
+                <span class="img-tag">Padre</span>
+                <span class="img-tag">Paladino</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.img-cards-grid -->
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+      <div class="lightbox__dialog">
+        <button class="lightbox__close" id="lightboxClose" aria-label="Fechar">✕</button>
+        <button class="lightbox__nav lightbox__prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+        <button class="lightbox__nav lightbox__next" id="lightboxNext" aria-label="Próximo">›</button>
+        <img class="lightbox__img" id="lightboxImg" src="" alt="">
+        <div class="lightbox__caption" id="lightboxCaption"></div>
       </div>
     </div>
+
   </section>
 
   <!-- ══════════════════════════════════════
