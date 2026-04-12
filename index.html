@@ -8,15 +8,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="stone-bg">
- 
+
   <!-- PARTICLES CONTAINER -->
   <div class="particles" id="particles"></div>
- 
+
   <!-- ══════════════════════════════════════
        HERO
        ══════════════════════════════════════ -->
   <section id="hero">
- 
+
     <div class="torch-left">
       <div class="torch-flame"></div>
       <div class="torch-stick"></div>
@@ -25,46 +25,49 @@
       <div class="torch-flame"></div>
       <div class="torch-stick"></div>
     </div>
- 
+
     <div class="hero-content">
       <p class="hero-tagline">☠ Dungeon Defense Roguelike ☠</p>
- 
+
       <img
         src="1775976250914_image.png"
         alt="The DungeonMancer"
         class="hero-logo"
+        width="700"
+        height="400"
+        onerror="this.style.display='none'"
       >
- 
+
       <p class="hero-subtitle">Gerencie o Caos. Lucre com o Caos.</p>
- 
+
       <p class="hero-desc">
         Você não veio para salvar o mundo — você veio para monetizá-lo.
         Como o mais ambicioso Necromante-Empreendedor das Terras de Ouro,
         sua masmorra <em>vai</em> dar lucro. O grimório pirata? Detalhe de implementação.
       </p>
- 
-      <div class="release-badge">
-        <span class="skull">💀</span>
-        <div class="release-badge-text">
-          Demo Disponível em
-          <strong>JUNHO 2026</strong>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:480px;margin:0 auto;">
+        <div class="release-badge">
+          <span class="skull">💀</span>
+          <div class="release-badge-text">
+            Demo Disponível em
+            <strong>JUNHO 2026</strong>
+          </div>
         </div>
+
+        <a href="#preorder" class="hero-cta">
+          🏰 Adicionar à Lista de Desejos
+        </a>
       </div>
- 
-      <br>
- 
-      <a href="#preorder" class="hero-cta">
-        🏰 Adicionar à Lista de Desejos
-      </a>
     </div>
- 
+
     <div class="scroll-hint">
       <span>Explorar</span>
       <span class="scroll-arrow">↓</span>
     </div>
- 
+
   </section>
- 
+
   <!-- ══════════════════════════════════════
        STORY
        ══════════════════════════════════════ -->
@@ -73,7 +76,7 @@
       <p class="section-label">A Origem</p>
       <h2 class="section-title">O Plano Infalível™</h2>
       <p class="section-subtitle">Nota: Nenhum plano de negócios sobreveve ao primeiro contato com um grimório pirata.</p>
- 
+
       <div class="story-grid reveal">
         <div class="story-text">
           <p>
@@ -96,14 +99,14 @@
             <br>— Grimo, o Grimório Pirata Sarcástico
           </div>
         </div>
- 
+
         <div class="story-img-wrap">
-          <img src="1775976257228_image.png" alt="Defesas e Acampamentos" loading="lazy">
+          <img src="1775976257228_image.png" alt="Defesas e Acampamentos" loading="lazy" width="600" height="400" onerror="this.closest('.story-img-wrap').style.display='none'">
         </div>
       </div>
     </div>
   </section>
- 
+
   <!-- ══════════════════════════════════════
        FEATURES
        ══════════════════════════════════════ -->
@@ -111,7 +114,7 @@
     <p class="section-label">Gameplay</p>
     <h2 class="section-title">Por Que a Sua Masmorra?</h2>
     <p class="section-subtitle">Porque nenhuma outra tem um manual de instruções tão... criativo.</p>
- 
+
     <div class="features-grid reveal">
       <div class="feature-card">
         <span class="feature-icon">🎴</span>
@@ -163,7 +166,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ══════════════════════════════════════
        GALLERY
        ══════════════════════════════════════ -->
@@ -171,29 +174,29 @@
     <p class="section-label">Visuais</p>
     <h2 class="section-title">Sua Masmorra, Seu Caos</h2>
     <p class="section-subtitle">Arte pixel 2D com câmera top-down — cada pixel, uma dívida de aventureiro.</p>
- 
+
     <div class="gallery-grid reveal">
       <div class="gallery-item">
-        <img src="1775976262432_image.png" alt="Os Funcionários">
+        <img src="1775976262432_image.png" alt="Os Funcionários" loading="lazy" width="800" height="500" onerror="this.closest('.gallery-item').style.display='none'">
         <div class="gallery-overlay">
           <span class="gallery-label">Os Funcionários — Sua Equipe Multifatorial</span>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="1775976268962_image.png" alt="Os Fornecedores">
+        <img src="1775976268962_image.png" alt="Os Fornecedores" loading="lazy" width="800" height="500" onerror="this.closest('.gallery-item').style.display='none'">
         <div class="gallery-overlay">
           <span class="gallery-label">Os Fornecedores — Sua Principal Fonte de Renda</span>
         </div>
       </div>
       <div class="gallery-item">
-        <img src="1775976257228_image.png" alt="Defesas e Acampamentos">
+        <img src="1775976257228_image.png" alt="Defesas e Acampamentos" loading="lazy" width="800" height="500" onerror="this.closest('.gallery-item').style.display='none'">
         <div class="gallery-overlay">
           <span class="gallery-label">Defesas & Acampamentos — Infraestrutura de Baixo Custo</span>
         </div>
       </div>
     </div>
   </section>
- 
+
   <!-- ══════════════════════════════════════
        CHARACTERS
        ══════════════════════════════════════ -->
@@ -201,13 +204,13 @@
     <p class="section-label">Elenco</p>
     <h2 class="section-title">Conheça a Equipe</h2>
     <p class="section-subtitle">Funcionários, fornecedores e um livro mal-humorado.</p>
- 
+
     <!-- Tabs use data-tab to avoid inline JS -->
     <div class="chars-tabs">
       <button class="chars-tab active" data-tab="allies">⚔ Funcionários</button>
       <button class="chars-tab"        data-tab="enemies">🛡 Fornecedores</button>
     </div>
- 
+
     <!-- ALLIES PANEL -->
     <div id="allies" class="chars-panel active reveal">
       <div class="char-card">
@@ -253,7 +256,7 @@
         <p class="char-desc">O tanque definitivo. Empurra inimigos com cada golpe e reduz dano até 50% da vida. Lento, mas devastador.</p>
       </div>
     </div>
- 
+
     <!-- ENEMIES PANEL -->
     <div id="enemies" class="chars-panel reveal">
       <div class="char-card">
@@ -300,7 +303,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ══════════════════════════════════════
        MECHANICS
        ══════════════════════════════════════ -->
@@ -308,7 +311,7 @@
     <p class="section-label">Como Jogar</p>
     <h2 class="section-title">O Ciclo do Negócio</h2>
     <p class="section-subtitle">Duas fases. Uma estratégia. Zero garantias do grimório.</p>
- 
+
     <div class="mechanics-grid reveal">
       <div class="mechanic-block" data-phase="Fase 1">
         <h3 class="mechanic-title">🎴 Gestão &amp; Draft</h3>
@@ -332,7 +335,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ══════════════════════════════════════
        INSPIRATIONS
        ══════════════════════════════════════ -->
@@ -340,7 +343,7 @@
     <p class="section-label">DNA do Jogo</p>
     <h2 class="section-title">Inspirações</h2>
     <p class="section-subtitle">Os ombros de gigantes nos quais nos apoiamos — respeitosamente.</p>
- 
+
     <div class="inspo-grid reveal">
       <div class="inspo-card">
         <div class="inspo-game">Dungeon Keeper + Loop Hero</div>
@@ -364,7 +367,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ══════════════════════════════════════
        PRE-ORDER / WISHLIST
        ══════════════════════════════════════ -->
@@ -384,7 +387,7 @@
       <p class="preorder-note">* Nenhuma galinha foi prejudicada no processo. Talvez alguns heróis.</p>
     </div>
   </section>
- 
+
   <!-- ══════════════════════════════════════
        FOOTER
        ══════════════════════════════════════ -->
@@ -395,7 +398,7 @@
     </p>
     <p class="footer-copy">© 2026 The DungeonMancer. Demo prevista para Junho de 2026. Grimório não incluído.</p>
   </footer>
- 
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -136,14 +136,15 @@ body::before {
    ══════════════════════════════════════════ */
 
 #hero {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 40px 20px 80px;
+  /* bottom padding makes room for the absolute scroll-hint */
+  padding: 60px 16px 100px;
 }
 
 #hero::before {
@@ -203,11 +204,13 @@ body::before {
 }
 
 .hero-logo {
-  width: min(700px, 90vw);
+  width: min(700px, 92vw);
+  max-height: 40vh;
+  object-fit: contain;
   filter: drop-shadow(0 0 40px rgba(42,212,200,0.4)) drop-shadow(0 0 80px rgba(74,26,110,0.6));
   animation: fadeUp 1s ease forwards 0.4s, pulse-glow 4s ease-in-out infinite 1.4s;
   opacity: 0;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .hero-subtitle {
@@ -239,26 +242,29 @@ body::before {
   border: 2px solid var(--teal);
   border-radius: 4px;
   padding: 14px 28px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 1.2s;
   box-shadow: 0 0 30px rgba(42,212,200,0.2), inset 0 0 20px rgba(74,26,110,0.3);
+  max-width: 92vw;
+  text-align: left;
 }
 .release-badge .skull { font-size: 1.5rem; }
 .release-badge-text { font-family: 'Cinzel Decorative', serif; font-size: clamp(0.8rem, 2vw, 1rem); }
 .release-badge-text strong { color: var(--gold); display: block; font-size: clamp(1rem, 2.5vw, 1.3rem); }
 
 .hero-cta {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
   color: #1a0a00;
   font-family: 'Cinzel Decorative', serif;
   font-weight: 700;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
   letter-spacing: 2px;
-  padding: 16px 40px;
+  padding: 16px 24px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -269,6 +275,9 @@ body::before {
   box-shadow: 0 4px 20px rgba(240,192,64,0.4);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
 }
 .hero-cta::before {
   content: '';
@@ -285,12 +294,15 @@ body::before {
 
 /* Scroll hint */
 .scroll-hint {
-  position: absolute; bottom: 30px; left: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
   transform: translateX(-50%);
+  white-space: nowrap;
   z-index: 2;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
   color: var(--text-dim);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   animation: fadeUp 1s ease forwards 2s, bob 2s ease-in-out infinite 3s;
@@ -452,11 +464,24 @@ section { padding: 80px 20px; }
 }
 .story-img-wrap img {
   width: 100%;
+  max-height: 400px;
+  object-fit: cover;
   border-radius: 8px;
   border: 2px solid rgba(240,192,64,0.3);
   box-shadow: 0 0 40px rgba(74,26,110,0.5), 0 20px 60px rgba(0,0,0,0.6);
   position: relative;
   z-index: 1;
+  /* prevent broken-image from stretching layout */
+  min-height: 0;
+}
+/* Hide alt text on broken images gracefully */
+.story-img-wrap img::before {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--stone), var(--stone2));
+  border-radius: 8px;
 }
 
 /* ══════════════════════════════════════════
@@ -778,11 +803,76 @@ footer {
    ══════════════════════════════════════════ */
 
 @media (max-width: 768px) {
-  .story-grid      { grid-template-columns: 1fr; }
-  .story-img-wrap  { order: -1; }
-  .mechanics-grid  { grid-template-columns: 1fr; }
-  .inspo-grid      { grid-template-columns: 1fr; }
-  .gallery-grid    { grid-template-columns: 1fr; }
-  .gallery-item:first-child { grid-column: 1; }
+  /* ── Hero ── */
+  #hero { padding: 60px 16px 90px; }
+  .hero-content { width: 100%; padding: 0 4px; }
+  .hero-tagline { font-size: 0.75rem; letter-spacing: 2px; }
+  .hero-desc { font-size: 1rem; padding: 0 4px; }
+  .release-badge {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+  .release-badge-text { font-size: 0.85rem; }
+  .release-badge-text strong { font-size: 1rem; }
+  .hero-cta { max-width: 100%; font-size: 0.85rem; padding: 16px 16px; }
+
+  /* Hide torches on narrow screens */
   .torch-left, .torch-right { display: none; }
+
+  /* ── Sections general ── */
+  section { padding: 56px 16px; }
+  .section-title { font-size: clamp(1.4rem, 7vw, 2rem); }
+  .section-subtitle { font-size: 0.95rem; margin-bottom: 36px; }
+
+  /* ── Story ── */
+  .story-grid { grid-template-columns: 1fr; gap: 32px; }
+  .story-img-wrap { order: -1; }
+  .story-img-wrap img { max-height: 260px; }
+  .story-text p { font-size: 1rem; }
+  .story-text p:first-child::first-letter { font-size: 2.8rem; }
+  .story-highlight { font-size: 0.95rem; }
+
+  /* ── Features ── */
+  .features-grid { grid-template-columns: 1fr; gap: 16px; }
+  .feature-card { padding: 24px 20px; }
+
+  /* ── Gallery ── */
+  .gallery-grid { grid-template-columns: 1fr; gap: 12px; }
+  .gallery-item:first-child { grid-column: 1; }
+
+  /* ── Characters ── */
+  .chars-tabs { max-width: 100%; }
+  .chars-tab { font-size: 0.75rem; letter-spacing: 1px; padding: 12px 10px; }
+  .chars-panel.active { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .char-card { padding: 18px 14px; }
+  .char-emoji { font-size: 2.2rem; }
+
+  /* ── Mechanics ── */
+  .mechanics-grid { grid-template-columns: 1fr; gap: 32px; }
+  .mechanic-block { padding: 28px 20px; }
+
+  /* ── Inspirations ── */
+  .inspo-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* ── Pre-order ── */
+  #preorder { padding: 70px 16px; }
+  .preorder-date { font-size: clamp(2rem, 12vw, 3.5rem); }
+  .preorder-desc { font-size: 1rem; }
+  .btn-primary, .btn-secondary {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 8px 0;
+    padding: 16px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-tagline { font-size: 0.65rem; letter-spacing: 1px; }
+  .hero-logo { max-height: 35vh; }
+  .chars-panel.active { grid-template-columns: 1fr 1fr; }
 }
