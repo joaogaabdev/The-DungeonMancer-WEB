@@ -973,6 +973,172 @@ section { padding: 80px 20px; }
 .inspo-desc { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; }
 
 /* ══════════════════════════════════════════
+   TEAM SECTION
+   ══════════════════════════════════════════ */
+
+#team { background: var(--bg); }
+
+.team-grid {
+  max-width: 960px;
+  margin: 0 auto 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* ── Individual card ── */
+.team-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(34,30,48,0.95), rgba(26,21,37,0.95));
+  border: 1px solid rgba(240,192,64,0.15);
+  border-radius: 12px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+
+/* top-right corner glow */
+.team-card::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 80px; height: 80px;
+  background: radial-gradient(ellipse at 100% 0%, rgba(42,212,200,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+/* bottom teal line reveal on hover */
+.team-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--purple-mid), var(--teal));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.team-card:hover::after { transform: scaleX(1); }
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(42,212,200,0.35);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45), 0 0 24px rgba(42,212,200,0.08);
+}
+
+/* ── Avatar ── */
+.team-card__avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 72px; height: 72px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.team-avatar-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  position: relative; z-index: 1;
+  display: block;
+  filter: drop-shadow(0 0 8px rgba(42,212,200,0.4));
+}
+
+.team-card__aura {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(74,26,110,0.6) 0%, rgba(42,212,200,0.08) 60%, transparent 100%);
+  animation: aura-pulse 3s ease-in-out infinite;
+}
+/* stagger aura pulse per card */
+.team-card:nth-child(2) .team-card__aura { animation-delay: 0.75s; }
+.team-card:nth-child(3) .team-card__aura { animation-delay: 1.5s;  }
+.team-card:nth-child(4) .team-card__aura { animation-delay: 2.25s; }
+
+@keyframes aura-pulse {
+  0%, 100% { transform: scale(1);    opacity: 0.7; }
+  50%       { transform: scale(1.25); opacity: 1;   }
+}
+
+/* ── Text info ── */
+.team-card__info { flex: 1; min-width: 0; }
+
+.team-name {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-role {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.team-bio {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.team-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.team-skill {
+  background: rgba(74,26,110,0.4);
+  border: 1px solid rgba(240,192,64,0.2);
+  color: var(--bone);
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.team-card:hover .team-skill {
+  background: rgba(74,26,110,0.7);
+  border-color: rgba(240,192,64,0.4);
+}
+
+/* ── Team note ── */
+.team-note {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(74,26,110,0.2), rgba(42,212,200,0.05));
+  border: 1px dashed rgba(240,192,64,0.25);
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.team-note__icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: 1fr; gap: 16px; }
+  .team-card { flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; }
+  .team-card__avatar { width: 60px; height: 60px; }
+  .team-avatar-icon { font-size: 2rem; }
+  .team-skills { justify-content: center; }
+  .team-note { flex-direction: column; align-items: center; text-align: center; }
+}
+
+/* ══════════════════════════════════════════
    PRE-ORDER SECTION
    ══════════════════════════════════════════ */
 
