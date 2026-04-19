@@ -38,6 +38,49 @@ function initRunes() {
   }
 }
 
+/* ── TEASER PLAYER ──────────────────────── */
+function initTeaser() {
+  const player    = document.getElementById('teaserPlayer');
+  const thumb     = document.getElementById('teaserThumb');
+  const playBtn   = document.getElementById('teaserPlayBtn');
+  const iframeWrap = document.getElementById('teaserIframeWrap');
+
+  if (!player || !playBtn) return;
+
+  const videoId = player.dataset.videoId;
+
+  function loadVideo() {
+    // Don't embed if no real ID has been set yet
+    if (!videoId || videoId === 'YOUR_VIDEO_ID') {
+      window.open(`https://www.youtube.com/results?search_query=The+DungeonMancer`, '_blank');
+      return;
+    }
+
+    // Build embed URL with autoplay + rel=0 (no suggested videos)
+    const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&color=white`;
+
+    const iframe = document.createElement('iframe');
+    iframe.src = src;
+    iframe.title = 'The DungeonMancer — Teaser Oficial';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+
+    iframeWrap.innerHTML = '';
+    iframeWrap.appendChild(iframe);
+
+    // Fade out thumb, fade in iframe
+    thumb.classList.add('is-hidden');
+    iframeWrap.classList.add('is-active');
+    iframeWrap.setAttribute('aria-hidden', 'false');
+  }
+
+  playBtn.addEventListener('click', loadVideo);
+  // Also allow clicking anywhere on the thumb
+  thumb.addEventListener('click', (e) => {
+    if (e.target !== playBtn && !playBtn.contains(e.target)) loadVideo();
+  });
+}
+
 /* ── IMAGE CARDS — Flip & Lightbox ─────── */
 const LIGHTBOX_DATA = [
   { src: '1776014212206_image.png',  caption: 'The DungeonMancer — Tela de Título'         },
@@ -171,6 +214,7 @@ function initParallax() {
 document.addEventListener('DOMContentLoaded', () => {
   initParticles();
   initRunes();
+  initTeaser();
   initImageCards();
   initTabs();
   initScrollReveal();

@@ -27,7 +27,7 @@
     </div>
 
     <div class="hero-content">
-      <p class="hero-tagline">☠ Dungeon Defense Roguelike ☠</p>
+      <p class="hero-tagline">☠ The Dungeon Mancer ☠</p>
 
       <img
         src="1775976250914_image.png"
@@ -61,10 +61,6 @@
       </div>
     </div>
 
-    <div class="scroll-hint">
-      <span>Explorar</span>
-      <span class="scroll-arrow">↓</span>
-    </div>
 
   </section>
 
@@ -72,38 +68,50 @@
        STORY
        ══════════════════════════════════════ -->
   <section id="story">
-    <div style="max-width:1100px;margin:0 auto;">
+    <div class="story-container">
+ 
+      <!-- Header -->
       <p class="section-label">A Origem</p>
       <h2 class="section-title">O Plano Infalível™</h2>
-      <p class="section-subtitle">Nota: Nenhum plano de negócios sobreveve ao primeiro contato com um grimório pirata.</p>
-
-      <div class="story-grid reveal">
-        <div class="story-text">
-          <p>
-            Nas <strong style="color:var(--gold)">Terras de Ouro</strong>, a economia gira em torno de heróis
-            saqueando masmorras. Todos ficam ricos — exceto os donos das masmorras, que estão falindo por
-            falta de gestão. Você viu a oportunidade que ninguém mais viu.
-          </p>
-          <p>
-            Com suas economias de estágio, você alugou uma catacumba úmida e comprou o item mais em conta
-            de um mercador de rua: o lendário <strong style="color:var(--teal)">Grimório "Ultimate Overlord"</strong>
-            — Versão de Avaliação/Pirata. O plano era simples: atraia aventureiros com ouro falso,
-            derrote-os com mortos-vivos, recicle o equipamento deles.
-          </p>
-          <p>
-            Na primeira invasão, você abriu o grimório para invocar uma legião fantasma...
-            e o portal cuspiu <strong style="color:var(--red)">quatro galinhas explosivas</strong>.
-          </p>
-          <div class="story-highlight">
-            "O grimório não é um bug — é uma feature com curadoria aleatória premium."
-            <br>— Grimo, o Grimório Pirata Sarcástico
-          </div>
-        </div>
-
-        <div class="story-img-wrap">
-          <img src="1775976257228_image.png" alt="Defesas e Acampamentos" loading="lazy" width="600" height="400" onerror="this.closest('.story-img-wrap').style.display='none'">
-        </div>
+      <p class="section-subtitle">Nota: Nenhum plano de negócios sobrevive ao primeiro contato com um grimório pirata.</p>
+ 
+      <!-- Full-width image -->
+      <div class="story-img-wrap reveal">
+        <img
+          src="1775976257228_image.png"
+          alt="Defesas e Acampamentos"
+          loading="lazy"
+          width="1100" height="500"
+          onerror="this.closest('.story-img-wrap').style.display='none'"
+        >
+        <div class="story-img-caption">Mostra de Defesas &amp; Acampamentos</div>
       </div>
+ 
+      <!-- Centered prose column -->
+      <div class="story-prose reveal">
+        <p>
+          Nas <strong class="story-em--gold">Terras de Ouro</strong>, a economia gira em torno de heróis
+          saqueando masmorras. Todos ficam ricos — exceto os donos das masmorras, que estão falindo por
+          falta de gestão. Você viu a oportunidade que ninguém mais viu.
+        </p>
+        <p>
+          Com suas economias de estágio, você alugou uma catacumba úmida e comprou o item mais em conta
+          de um mercador de rua: o lendário <strong class="story-em--teal">Grimório "Ultimate Overlord"</strong>
+          — Versão de Avaliação/Pirata. O plano era simples: atraia aventureiros com ouro falso,
+          derrote-os com mortos-vivos, recicle o equipamento deles.
+        </p>
+        <p>
+          Na primeira invasão, você abriu o grimório para invocar uma legião fantasma...
+          e o portal cuspiu <strong class="story-em--red">quatro galinhas explosivas</strong>.
+        </p>
+      </div>
+ 
+      <!-- Pull quote -->
+      <blockquote class="story-highlight reveal">
+        <p>"O grimório não é um bug — é uma feature com curadoria aleatória premium."</p>
+        <cite>— Grimo, o Grimório Pirata Sarcástico</cite>
+      </blockquote>
+ 
     </div>
   </section>
 
@@ -167,6 +175,76 @@
     </div>
   </section>
 
+  <section id="teaser">
+    <p class="section-label">Assista</p>
+    <h2 class="section-title">Teaser Oficial</h2>
+    <p class="section-subtitle">Veja o grimório pirata em ação — galinhas incluídas.</p>
+ 
+    <div class="teaser-wrapper reveal">
+ 
+      <!-- YouTube embed placeholder — troque o ID abaixo pelo ID real do vídeo -->
+      <!-- Ex: https://www.youtube.com/watch?v=XXXXXXXXXXX → data-video-id="XXXXXXXXXXX" -->
+      <div class="teaser-player" id="teaserPlayer" data-video-id="OPRePCzBdfY"> 
+ 
+        <!-- Thumbnail / play screen (visível antes do play) -->
+        <div class="teaser-thumb" id="teaserThumb">
+          <div class="teaser-thumb__overlay"></div>
+ 
+          <!-- Dungeon atmosphere decorations -->
+          <div class="teaser-torch teaser-torch--left">
+            <div class="torch-flame"></div>
+            <div class="torch-stick"></div>
+          </div>
+          <div class="teaser-torch teaser-torch--right">
+            <div class="torch-flame"></div>
+            <div class="torch-stick"></div>
+          </div>
+ 
+          <div class="teaser-thumb__content">
+            <div class="teaser-platform">
+              <svg class="teaser-yt-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              YouTube
+            </div>
+            <button class="teaser-play-btn" id="teaserPlayBtn" aria-label="Assistir teaser">
+              <span class="teaser-play-btn__ring"></span>
+              <span class="teaser-play-btn__ring teaser-play-btn__ring--delay"></span>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+            <p class="teaser-thumb__label">The DungeonMancer — Teaser Oficial</p>
+            <p class="teaser-thumb__sub">Clique para assistir</p>
+          </div>
+        </div>
+ 
+        <!-- iFrame injected by JS after click -->
+        <div class="teaser-iframe-wrap" id="teaserIframeWrap" aria-hidden="true"></div>
+ 
+      </div><!-- /.teaser-player -->
+ 
+      <!-- Info bar below player -->
+      <div class="teaser-meta">
+        <div class="teaser-meta__item">
+          <span class="teaser-meta__icon">🎬</span>
+          <span>Teaser Oficial</span>
+        </div>
+        <div class="teaser-meta__sep">·</div>
+        <div class="teaser-meta__item">
+          <span class="teaser-meta__icon">📅</span>
+          <span>2026</span>
+        </div>
+        <div class="teaser-meta__sep">·</div>
+        <div class="teaser-meta__item">
+          <span class="teaser-meta__icon">🎮</span>
+          <span>Demo — Junho 2026</span>
+        </div>
+      </div>
+ 
+    </div><!-- /.teaser-wrapper -->
+  </section>
+
   <!-- ══════════════════════════════════════
        GALLERY — Interactive Image Cards
        ══════════════════════════════════════ -->
@@ -182,7 +260,6 @@
         <div class="img-card__inner">
           <div class="img-card__face img-card__front">
             <img src="/images/TheDungeonMancer.png" alt="The DungeonMancer" loading="lazy" width="800" height="500">
-            <div class="img-card__badge">🏰 Título</div>
             <div class="img-card__hint">Clique para ver detalhes</div>
           </div>
           <div class="img-card__face img-card__back">
@@ -208,7 +285,6 @@
         <div class="img-card__inner">
           <div class="img-card__face img-card__front">
             <img src="/images/Camping.png" alt="Defesas e Acampamentos" loading="lazy" width="800" height="500">
-            <div class="img-card__badge">🕸️ Defesas</div>
             <div class="img-card__hint">Clique para ver detalhes</div>
           </div>
           <div class="img-card__face img-card__back">
@@ -234,7 +310,6 @@
         <div class="img-card__inner">
           <div class="img-card__face img-card__front">
             <img src="/images/Employees.png" alt="Os Funcionários" loading="lazy" width="800" height="500">
-            <div class="img-card__badge">💀 Funcionários</div>
             <div class="img-card__hint">Clique para ver detalhes</div>
           </div>
           <div class="img-card__face img-card__back">
@@ -261,7 +336,6 @@
         <div class="img-card__inner">
           <div class="img-card__face img-card__front">
             <img src="/images/Supplyers.png" alt="Os Fornecedores" loading="lazy" width="800" height="500">
-            <div class="img-card__badge">⚔️ Fornecedores</div>
             <div class="img-card__hint">Clique para ver detalhes</div>
           </div>
           <div class="img-card__face img-card__back">
@@ -486,7 +560,12 @@
           <div class="team-card__aura"></div>
         </div>
         <div class="team-card__info">
-          <h3 class="team-name">Emanuel Brebal</h3>
+          <h3 class="team-name">
+            <a class="team-gh-link" href="https://github.com/emanuelbrebal" target="_blank" rel="noopener">
+              <svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Emanuel Victor
+            </a>
+          </h3>
           <div class="team-role">Game Designer &amp; Diretor Criativo</div>
           <p class="team-bio">
             Responsável pela visão do jogo, mecânicas de gameplay e pelo GDD que você acabou de ler. 
@@ -494,9 +573,7 @@
           </p>
           <div class="team-skills">
             <span class="team-skill">Game Design</span>
-            <span class="team-skill">History</span>
-            <span class="team-skill">Sprites</span>
-            <span class="team-skill">Animations</span>
+            <span class="team-skill">Narrativa</span>
           </div>
         </div>
       </div>
@@ -507,15 +584,20 @@
           <div class="team-card__aura"></div>
         </div>
         <div class="team-card__info">
-          <h3 class="team-name">Jairo Rafael</h3>
+          <h3 class="team-name">
+            <a class="team-gh-link" href="https://github.com/seu-usuario" target="_blank" rel="noopener">
+              <svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Jairo Rafael
+            </a>
+          </h3>
           <div class="team-role">Desenvolvedor</div>
           <p class="team-bio">
             Conjura código como o Necro-manager conjura esqueletos — às vezes sai o que era esperado, 
             às vezes saem galinhas. Especialista em Godot e sistemas roguelike.
           </p>
           <div class="team-skills">
-            <span class="team-skill">UNIT Engine</span>
-            <span class="team-skill">C</span>
+            <span class="team-skill">Unity Engine</span>
+            <span class="team-skill">C#</span>
             <span class="team-skill">IA de Inimigos</span>
           </div>
         </div>
@@ -527,15 +609,20 @@
           <div class="team-card__aura"></div>
         </div>
         <div class="team-card__info">
-          <h3 class="team-name">Rayanne Ellen</h3>
-          <div class="team-role">Desenvolvedora</div>
+          <h3 class="team-name">
+            <a class="team-gh-link" href="https://github.com/RayanneEllen13092004" target="_blank" rel="noopener">
+              <svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+             Rayanne Ellen
+            </a>
+          </h3>
+          <div class="team-role">Desenvolvedor</div>
           <p class="team-bio">
             Conjura código como o Necro-manager conjura esqueletos — às vezes sai o que era esperado, 
             às vezes saem galinhas. Especialista em Godot e sistemas roguelike.
           </p>
           <div class="team-skills">
-            <span class="team-skill">UNIT Engine</span>
-            <span class="team-skill">C</span>
+            <span class="team-skill">Unity Engine</span>
+            <span class="team-skill">C#</span>
             <span class="team-skill">IA de Inimigos</span>
           </div>
         </div>
@@ -547,18 +634,21 @@
           <div class="team-card__aura"></div>
         </div>
         <div class="team-card__info">
-          <h3 class="team-name">João Gabriel</h3>
+          <h3 class="team-name">
+            <a class="team-gh-link" href="https://github.com/joaogaabdev" target="_blank" rel="noopener">
+              <svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              João Gabriel
+            </a>
+          </h3>
           <div class="team-role">Artista &amp; Pixel Artist</div>
           <p class="team-bio">
-            Deu vida visual ao Necro-manager, às criaturas e à masmorra low-cost. 
+            Deu vida visual à masmorra low-cost. 
             Cada sprite é um microcosmo de personalidade comprimido em poucos pixels.
           </p>
           <div class="team-skills">
             <span class="team-skill">Pixel Art</span>
-            <span class="team-skill">UI/UX</span>
-            <span class="team-skill">Collisions</span>
-            <span class="team-skill">Tileset</span>
-            <span class="team-skill">Physic</span>
+            <span class="team-skill">WebSite</span>
+            <span class="team-skill">Tilemap</span>
           </div>
         </div>
       </div>
@@ -569,7 +659,12 @@
           <div class="team-card__aura"></div>
         </div>
         <div class="team-card__info">
-          <h3 class="team-name">Nome do Membro</h3>
+          <h3 class="team-name">
+            <a class="team-gh-link" href="" target="_blank" rel="noopener">
+              <svg class="gh-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              Alisson Vieira
+            </a>
+          </h3>
           <div class="team-role">Designer de Som &amp; Música</div>
           <p class="team-bio">
             Compositor das trilhas que alternam entre o suspense da fase de planejamento 
@@ -578,7 +673,6 @@
           <div class="team-skills">
             <span class="team-skill">Composição</span>
             <span class="team-skill">Sound Design</span>
-            <span class="team-skill">FMOD</span>
           </div>
         </div>
       </div>
