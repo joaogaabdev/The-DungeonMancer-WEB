@@ -1461,8 +1461,91 @@ section { padding: 80px 20px; }
   font-style: italic;
   line-height: 1.8;
 }
+.preorder-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* ── itch.io branded button ── */
+.btn-itchio {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #fa5c5c 0%, #d43a3a 100%);
+  color: #fff;
+  font-family: 'Cinzel Decorative', serif;
+  text-decoration: none;
+  padding: 14px 32px 14px 24px;
+  border-radius: 4px;
+  border: 2px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 24px rgba(250,92,92,0.45), 0 0 0 0 rgba(250,92,92,0.3);
+  position: relative;
+  overflow: hidden;
+  margin: 8px;
+}
+/* shimmer sweep */
+.btn-itchio::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+.btn-itchio:hover::before { transform: translateX(100%); }
+.btn-itchio:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 36px rgba(250,92,92,0.65), 0 0 0 4px rgba(250,92,92,0.2);
+  border-color: rgba(255,255,255,0.3);
+}
+.btn-itchio:active { transform: translateY(-1px); }
+
+.btn-itchio__icon {
+  width: 28px; height: 28px;
+  fill: #fff;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+}
+
+.btn-itchio__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+.btn-itchio__sub {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 3px;
+}
+.btn-itchio__main {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .btn-itchio {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+  .preorder-btns { flex-direction: column; align-items: stretch; padding: 0 4px; }
+  .preorder-btns .btn-secondary { text-align: center; justify-content: center; margin: 0; }
+}
+
 .preorder-note {
-  margin-top: 32px;
+  margin-top: 20px;
   color: var(--text-dim);
   font-size: 0.85rem;
   font-style: italic;
